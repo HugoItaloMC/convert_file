@@ -11,7 +11,7 @@ class Factory(AbstractFactory):
     
     def __iter__(self):
         yield
-        xbool: bool  = yield self.data_frame(path=self._path)
+        xbool: bool = yield self.data_frame(path=self._path)
         raise StopIteration
         
 

@@ -6,5 +6,6 @@ __all__ = ["ConcretDataFrame"]
 # refrênciando descritor da classe Handler   ##
 ###############################################
                                            
-class ConcretDataFrame(AbstractDataFrame): run = ...        
+class ConcretDataFrame(AbstractDataFrame): run = ...
+
                                              

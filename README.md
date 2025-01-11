@@ -1,6 +1,6 @@
 # Descrição do Projeto
 
-Este projeto tem como objetivo uma automacão ao site do instagram. Ele segue uma arquitetura modular e escalável, com separação clara entre as regras de negócios, a apresentação da interface do usuário e o gerenciamento das tarefas dinâmicas.
+Este projeto tem como objetivo converter arquivos (json, csv, xlsx). Ele segue uma arquitetura modular e escalável, com separação clara entre as regras de negócios, a apresentação da interface do usuário e o gerenciamento das tarefas dinâmicas.
 
 ## Estrutura do Projeto
 
@@ -17,11 +17,11 @@ A estrutura do projeto foi organizada para garantir uma boa separação de respo
 
 ### template
 - **template/__\_\_init\_\___.py**: Contém a classe Template, que gerencia os layouts e a execução das tarefas nos menus.
-- **main.py**: Layout para o menu principal.
+- **main.py**: Layout para a interface.
 
 
 ### utils
-- **utils/__\_\_init\_\___.py**: Contém funções utilitárias para tarefas comuns, como ler arquivos ou gerar valores aleatórios.
+- **utils/__\_\_init\_\___.py**: Contém funções utilitárias para tarefas comuns, como ler arquivos ou gerar valores aleatórios, entre outras.
 
 ### __\_\_main\_\___.py
 - O ponto de entrada do código, responsável pela execução do fluxo principal da aplicação.
@@ -37,7 +37,7 @@ A separação de preocupações entre a lógica de negócios (regras) e a aprese
 #### Padrões de Design
 O sistema utiliza os seguintes padrões de design:
 - **Factory**: Para a criação de objetos de regras e templates.
-- **Facade**: Para simplificar a interface entre o cliente e o sistema, escondendo a complexidade interna.
+- **Facade**: Para simplificar a interface entre o cliente e o sistema, escondendo a complexidade interna, Facade se encontra no módulo src/\_\_init\_\_.py.
   
 #### Handler (Possível Anti-padrão)
 O uso do Handler com descritor e meta-classe pode ser considerado um anti-padrão, mas foi escolhido para permitir um controle mais granular sobre o estado e a execução das regras. Cada regra é aplicada dinamicamente nas classes abstratas, e o Handler gerencia os atributos de estado e a saída. Esse design proporciona uma boa organização para escalar e manter o código no futuro.

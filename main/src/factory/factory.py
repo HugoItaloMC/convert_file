@@ -5,6 +5,5 @@ __all__ = ['AbstractFactory']
 class AbstractFactory:
     # Refrênciando classes concretas em atributos  métodos
 
-   def data_frame(self, path: str):
-    return ConcretDataFrame(path=path) 
-    
+    def data_frame(self, path: str):
+        return ConcretDataFrame(path=path) 
