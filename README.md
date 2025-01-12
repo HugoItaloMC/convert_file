@@ -45,8 +45,9 @@ O uso do Handler com descritor e meta-classe pode ser considerado um anti-padrã
 ## Como Usar
 
 1. Clone o repositório.
-2. Execute o código em `__main__.py` para iniciar a execução.
-3. Explore as fábricas de regras e templates para personalizar o comportamento da aplicação.
+2. Na pasta aonde `convert_file` se encontra execute o seguinte comando `. convert_file/run.sh`
+3. Agora no seu terminal execute o seguinte comando `ConvertFile` e veja o programa abrir
+
 
 ## Possíveis Melhorias
 

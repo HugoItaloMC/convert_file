@@ -2,13 +2,27 @@
 
 #echo "Executando script em: $(pwd)"
 
+# Caminho do diretório do ambiente virtual
+VENV_DIR="$HOME/.convert_file/.venv"
 
-# Ativa o ambiente virtual
-source "$HOME/Documentos/more/work_flow/services/convert_file/.venv/bin/activate"
+# Verifica se o ambiente virtual já existe
+if [ ! -d "$VENV_DIR" ]; then
+    echo "Criando o ambiente virtual..."
+    virtualenv "$VENV_DIR"
+    
+    # Ativa o ambiente virtual
+    source "$VENV_DIR/bin/activate"
 
+    # Atualiza o pip e instala as dependências
+    pip install --upgrade pip
+    pip install -r "$HOME/.convert_file/REQUIREMENTS.txt"
+else
+    # Ativa o ambiente virtual se já existir
+    source "$VENV_DIR/bin/activate"
+fi
 
 # Tenta executar o script Python e verifica se há erro
-if  ! python3 $HOME/Documentos/more/work_flow/services/convert_file/run.py --start; then
+if  ! python3 $HOME/.convert_file/run.py --start; then
     echo "Erro ao executar python3 main/run.py --start. Verificando instalação do Python..."
 
     # Verifica se o Python está instalado
@@ -18,7 +32,7 @@ if  ! python3 $HOME/Documentos/more/work_flow/services/convert_file/run.py --sta
     
     # Tenta executar o script novamente após a instalação
     #echo "Tentando executar o script novamente..."
-    #python3 $HOME/Documentos/learnings/smooth/high_python/main/run.py --start
+    #python3 $HOME/.convert_file/run.py --start
 fi
 # Função para instalar o Python caso ele não esteja presente
 install_python() {
