@@ -12,9 +12,9 @@ if  ! python3 $HOME/Documentos/more/work_flow/services/convert_file/run.py --sta
     echo "Erro ao executar python3 main/run.py --start. Verificando instalação do Python..."
 
     # Verifica se o Python está instalado
-    #if ! command -v python3 &> /dev/null; then
-    #    install_python
-    #fi
+    if ! command -v python3 &> /dev/null; then
+        install_python
+    fi
     
     # Tenta executar o script novamente após a instalação
     #echo "Tentando executar o script novamente..."
